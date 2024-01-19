@@ -13,7 +13,7 @@ clean:
 	@echo "cleaning all files in input/ except .gitkeep"
 	find input -type f ! -name '.gitkeep' -delete
 
-run:
+convert:
 	pdm run python run.py
 
 watch:
