@@ -4,7 +4,7 @@
 
 I chose to name this project "Scroopy Noopers" because it reflects the scientific nature of the work involved. This decision is influenced by the character Scroopy Noopers, who is depicted as a scientist. The main goal of the project is to convert Markdown files into PDF format, especially focusing on research papers. Writing research papers is inherently a scientific activity, so naming it "Scroopy Noopers" aligns well with the project's theme.
 
-Additionally, my personal fondness for the television series "Rick and Morty" played a role in selecting this name.
+Additionally, my personal fondness for the television series "Rick and Morty" played a role in selecting this name. Scroopy Noopers is featured in the episode ["Something Ricked This Way Comes"](https://www.imdb.com/title/tt3333840/?ref_=ttep_ep9), which is one of my favorite episodes of the series. I also like the name "Scroopy Noopers" because it is fun to say.
 
 ## System Requirements
 
