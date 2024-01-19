@@ -1,0 +1,19 @@
+[project]
+name = "scroopy-noopers"
+version = "1.0.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Koen van Esterik", email = "koen@vanesterik.dev"},
+]
+dependencies = [
+    "loguru>=0.7.2",
+    "click>=8.1.7",
+    "watchdog>=3.0.0",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+package-type = "application"

@@ -1,4 +1,4 @@
-.PHONY: help clean convert watch
+.PHONY: help clean run watch
 DEFAULT_GOAL := help
 
 help:
@@ -13,8 +13,8 @@ clean:
 	@echo "cleaning all files in input/ except .gitkeep"
 	find input -type f ! -name '.gitkeep' -delete
 
-convert:
-	./scripts/convert.sh
+run:
+	pdm run python run.py
 
 watch:
-	./scripts/convert.sh --watch
+	pdm run python run.py --watch

@@ -2,8 +2,8 @@
 
 .DS_Store
 
-bibliography/*
-!bibliography/.gitkeep
+references/*
+!references/.gitkeep
 
 input/*
 !input/.gitkeep
