@@ -1,10 +1,11 @@
-from loguru import logger
-from pathlib import Path
-from watchdog.events import FileSystemEventHandler
-from watchdog.observers import Observer
-import click
 import subprocess
 import time
+from pathlib import Path
+
+import click
+from loguru import logger
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 
 @click.command()
@@ -80,11 +81,11 @@ def convert_files_to_pdf():
     Converts Markdown files in the 'input' directory to PDF using Pandoc.
 
     The function takes the following steps: 1. Defines the base path. 2. Defines
-    the input and output paths, references file path, and template file path. 3.
+    the input and output paths, citations file path, and template file path. 3.
     Loops over the Markdown files in the input path and converts them to PDF
     using Pandoc.
        - It uses the specified template file for styling.
-       - If a references file exists, it includes it for citation processing.
+       - If a citations file exists, it includes it for citation processing.
 
     Note: Pandoc and its dependencies must be installed for this function to
     work properly.
@@ -93,7 +94,8 @@ def convert_files_to_pdf():
     base_path = Path()
     input_path = (base_path / "input").absolute()
     output_path = (base_path / "output").absolute()
-    references_file = (base_path / "references/references.bib").absolute()
+    citations_file = (base_path / "citations/citations.bib").absolute()
+    citation_style_file = (base_path / "citations/ieee.csl").absolute()
     template_file = (base_path / "templates/template.tex").absolute()
 
     files = list(input_path.glob("*.md"))
@@ -103,14 +105,15 @@ def convert_files_to_pdf():
             "pandoc",
             file,
             "--citeproc",
+            f"--csl={citation_style_file}",
             "--listings",
             f"--output={output_path / f'{file.stem}.pdf'}",
             f"--resource-path={input_path}",
             f"--template={template_file}",
         ]
 
-        if references_file.exists():
-            command.append(f"--bibliography={references_file}")
+        if citations_file.exists():
+            command.append(f"--bibliography={citations_file}")
 
         subprocess.run(command, check=True)
 

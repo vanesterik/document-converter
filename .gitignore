@@ -164,8 +164,9 @@ cython_debug/
 
 .DS_Store
 
-references/*
-!references/.gitkeep
+citations/*
+!citations/.gitkeep
+!citations/ieee.csl
 
 input/*
 !input/.gitkeep
